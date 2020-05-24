@@ -1,75 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-
-
-// computer option selction
-function computerAction()
-{
-
-    const actions = ['Rock', 'Paper', 'Scissors'];
-    let actionResult = actions[Math.floor(Math.random()*actions.length)];
-    console.log(actionResult)
-    return actionResult;
-   
-}
-
-computerAction ()
-
-// player selection
-function playerPlay()
-{
-    let playerChoice = prompt ("Type Rock, Paper or Scissors")
-    console.log(playerChoice)
-    return playerChoice;
-
-}
-
-playerPlay ()
-
-// play round function
-
-function playerRound()
-{
-
-const computerPlay = computerAction();
-const playerChoice = playerPlay();
-
-if (computerPlay == playerChoice)
-{
-    return ("Its a draw" + playerChoice + "Matches" + computerPlay);
-}
-
-if ((computerPlay == "Rock"  && playerChoice =="Scissors")  ||
-(computerPlay == "Scissors" && playerChoice == "Paper")    ||
-(computerPlay == "Paper" && playerChoice == "Rock"))
-{return ("You lose" + computerPlay + "beats" + playerChoice)}
-
-else {
-    return ("You win" + playerChoice + "beats" + computerPlay); 
-}
-}
-
-// PlayGame
-
-function playGame()
-{
-console.log(playerRound)
-console.log(playerRound)
-console.log(playerRound)
-console.log(playerRound)
-console.log(playerRound)
-}
-
-playGame()
-
-
-</script>
-
-
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -77,4 +8,5 @@ playGame()
 <body>
     
 </body>
+<script src = "rps.js"></script>
 </html>
