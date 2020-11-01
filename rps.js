@@ -1,44 +1,31 @@
-
-function computerAction()
+function computerPlay() 
 {
-    const actions = ['Rock', 'Paper', 'Scissors'];
-    let actionResult = actions[Math.floor(Math.random()*actions.length)];
-    console.log(actionResult)
-    return actionResult;   
+    const computerSelection = ["rock", "paper", "scissors"];
+    const random = computerSelection[Math.floor(Math.random() * computerSelection.length)] ;
+    console.log(random)
+    return random;
 }
 
+function playRound (playerSelection, computerSelection){
+    if (playerSelection == computerSelection)
+    {return("Its a draw")}
 
-function playerRound()
-{
-const computerPlay = computerAction().toLowerCase();
-const playerChoice = prompt("Type Rock, Paper or Scissors").toLowerCase();
+    else if ((playerSelection == "rock"  && computerSelection =="scissors")  ||
+    (playerSelection == "scissors" && computerSelection == "paper")    ||
+    (playerSelection == "paper" && computerSelection == "rock"))
+    {return ("You win")}
 
-if (computerPlay == playerChoice)
-{
-    return ("Its a draw " + playerChoice + " Matches " + computerPlay);
+    else {return ("You lose")}
 }
 
-if ((computerPlay == "rock"  && playerChoice =="scissors")  ||
-(computerPlay == "scissors" && playerChoice == "paper")    ||
-(computerPlay == "paper" && playerChoice == "rock"))
-{
-    computerScore++
-    return ("You lose " + computerPlay + " beats " + playerChoice)}
-
-else {
-    playerScore++
-    return ("You win " + playerChoice + " beats " + computerPlay); 
+function game(){
+    for ( i = 0; i < 5; i++)
+    {
+        const playerSelection = (prompt("Type Rock, Paper or Scissors".toLowerCase()))
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+        
+        [i];
+    }
 }
-}
-
-playerRound()
-
-function playGame()
-{
-    for ( i = 0 ; i < 5; i++)
-{
-    playerRound()
-    [i];
-}}
-
-console.log(playGame())
+game()
