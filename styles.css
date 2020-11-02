@@ -1,0 +1,40 @@
+.body {
+    min-height: 100%;
+    width: 100%;
+    margin:0px;
+    padding:0px;
+    
+}
+
+.container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 100px;
+    font-family: 'Roboto Slab', serif;
+    
+}
+
+.navbartop{
+    grid-column: 1/4;
+    background-color: #36453B;
+    color:#F5F9E9;
+    padding: 15px;   
+}
+
+.grid-item{
+    background-color: #596869;
+    color: #F5F9E9;
+    padding-top: 100px;
+    height: 150px;
+    text-align:center;
+}
+
+.score{
+    list-style-type: none;
+    min-height: 50px;;
+    background-color: #36453B;
+    color:#F5F9E9;
+    text-align:center;
+    padding-top: 25px;
+
+}
