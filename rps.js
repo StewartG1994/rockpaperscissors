@@ -18,6 +18,7 @@ function playRound (playerSelection, computerSelection){
     else {return ("You lose")}
 }
 
+
 function game(){
     for ( i = 0; i < 5; i++)
     {
@@ -28,4 +29,10 @@ function game(){
         [i];
     }
 }
-game()
+
+const buttons = document.querySelector('button')
+buttons.forEach(button => {
+button.addEventListener('click', () => {
+    playRound()
+})    
+});
