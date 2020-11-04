@@ -7,6 +7,7 @@ function computerPlay()
 }
 
 function playRound (playerSelection, computerSelection){
+
     if (playerSelection == computerSelection)
     {return("Its a draw")}
 
@@ -18,21 +19,36 @@ function playRound (playerSelection, computerSelection){
     else {return ("You lose")}
 }
 
-
 function game(){
-    for ( i = 0; i < 5; i++)
-    {
-        const playerSelection = (prompt("Type Rock, Paper or Scissors".toLowerCase()))
+   // for ( i = 0; i < 5; i++)
+    {       
+        playerSelection = 'x'; 
         const computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
         
-        [i];
+       // [i];
     }
 }
+game()
 
-const buttons = document.querySelector('button')
-buttons.forEach(button => {
-button.addEventListener('click', () => {
-    playRound()
-})    
+const rockbtn = document.querySelector('.rock');
+rockbtn.addEventListener('click', () => {
+  const playerSelection = 'rock';
+  console.log(playerSelection);
 });
+
+const paperbtn = document.querySelector('.paper');
+paperbtn.addEventListener('click', () => {
+  const playerSelection = 'paper';
+  
+  console.log(playerSelection)
+});
+
+const scissorsbtn = document.querySelector('.scissors');
+scissorsbtn.addEventListener('click', () => {
+  const playerSelection = 'scissors';
+  console.log(playerSelection)
+})
+
+
+  
