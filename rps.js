@@ -6,7 +6,7 @@ function computerPlay()
     return random;
 }
 
-function playRound (playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
 
     if (playerSelection == computerSelection)
     {return("Its a draw")}
@@ -19,36 +19,18 @@ function playRound (playerSelection, computerSelection){
     else {return ("You lose")}
 }
 
-function game(){
-   // for ( i = 0; i < 5; i++)
+const buttons = document.querySelector('button')
+buttons.addEventListener('click', game)
+
+function game()
+   //for ( i = 0; i < 5; i++)
     {       
-        playerSelection = 'x'; 
+        const playerSelection = buttons.id;
         const computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
         
-       // [i];
+     //  [i];
     }
-}
+  
+
 game()
-
-const rockbtn = document.querySelector('.rock');
-rockbtn.addEventListener('click', () => {
-  const playerSelection = 'rock';
-  console.log(playerSelection);
-});
-
-const paperbtn = document.querySelector('.paper');
-paperbtn.addEventListener('click', () => {
-  const playerSelection = 'paper';
-  
-  console.log(playerSelection)
-});
-
-const scissorsbtn = document.querySelector('.scissors');
-scissorsbtn.addEventListener('click', () => {
-  const playerSelection = 'scissors';
-  console.log(playerSelection)
-})
-
-
-  

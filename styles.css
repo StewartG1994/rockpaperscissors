@@ -21,7 +21,7 @@
     padding: 15px;   
 }
 
-.rock, .paper, .scissors{
+.btn {
     background-color: #596869;
     color: #F5F9E9;
     padding-top: 100px;
