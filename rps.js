@@ -2,9 +2,9 @@ function computerPlay()
 {
     const computerSelection = ["rock", "paper", "scissors"];
     const random = computerSelection[Math.floor(Math.random() * computerSelection.length)] ;
-    console.log(random)
     return random;
 }
+computerPlay()
 
 function playRound(playerSelection, computerSelection){
 
@@ -19,22 +19,16 @@ function playRound(playerSelection, computerSelection){
     else {return ("You lose")}
 }
 
+const button = document.querySelectorAll('button');
+    button.forEach((button) => {
+    button.addEventListener('click', event => {
+        for (i = 0; i < 5; i++);
+        const playerSelection = event.target.id;
+        const computerSelection = computerPlay()
+        console.log(playRound(playerSelection, computerSelection));  
+        console.log(playerSelection)
+        console.log(computerSelection);
+        [i];
+    })
+    })
 
-
-const buttons = document.querySelectorAll('button');
-console.log(buttons)
-buttons.forEach((button) => {
-    buttons.addEventListener('click', game)
-})
-
-
-function game() {
-   for (i = 0; i < 5; i++)
-
-playerSelection = buttons.id;
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));        
-[i];
-}
-  
-game()
