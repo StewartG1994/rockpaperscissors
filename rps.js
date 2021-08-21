@@ -2,33 +2,38 @@ function computerPlay()
 {
     const computerSelection = ["rock", "paper", "scissors"];
     const random = computerSelection[Math.floor(Math.random() * computerSelection.length)] ;
+    console.log(random)
     return random;
 }
-computerPlay()
+
 
 function playRound(playerSelection, computerSelection){
 
     if (playerSelection == computerSelection)
     {return("Its a draw")}
 
-    else if ((playerSelection == "rock"  && computerSelection =="scissors")  ||
-    (playerSelection == "scissors" && computerSelection == "paper")    ||
-    (playerSelection == "paper" && computerSelection == "rock"))
-    {return ("You win")}
+    else if ((playerSelection.toLowerCase() == "rock"  && computerSelection =="scissors")  ||
+    (playerSelection.toLowerCase() == "scissors" && computerSelection == "paper")    ||
+    (playerSelection.toLowerCase() == "paper" && computerSelection == "rock"))
+    {return ("You win against the computer ")}
 
-    else {return ("You lose")}
+    else {return ("You lost against a computer...")}
+
 }
 
-const button = document.querySelectorAll('button');
-    button.forEach((button) => {
-    button.addEventListener('click', event => {
-        for (i = 0; i < 5; i++);
-        const playerSelection = event.target.id;
-        const computerSelection = computerPlay()
-        console.log(playRound(playerSelection, computerSelection));  
-        console.log(playerSelection)
-        console.log(computerSelection);
-        [i];
-    })
-    })
+
+function game(){
+
+let playerChoice = prompt('Rock, Paper or Scissors?')
+console.log(playRound(playerChoice, computerPlay()))
+
+
+
+}
+
+game()
+game()
+game()
+game()
+game()
 
