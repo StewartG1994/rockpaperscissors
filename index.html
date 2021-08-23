@@ -21,27 +21,37 @@
 
        <div class = 'selection'>
 
-        <div class="card" id = 'rock'>
-            <img src="Asset10.png">
-            <h4><b>Rock</b></h4>   
+        <div class="card" id = 'rock' value = 'rock'>
+
+          <img src="Asset10.png">
+           <h4><b>Rock</b></h4>   
+
           </div>
 
-          <div class ="card" id = 'paper'>
+          <div class ="card" id = 'paper' value ='paper'>
+
             <img src="Asset11.png">
             <h4><b>Paper</b></h4>
+
           </div>
 
-          <div class="card" id ='scissors'>
+          <div class="card" id ='scissors' value = 'scissors'>
             <img src="Asset12.png">
             <h4><b>Scissors</b></h4>
           </div>
        </div>
 
-       <div class ='score'></div>
-       <div class ='actions'></div>
-
-
-
+       <div class ='scorePlayer'>
+         <h3>Player Score</h3>
+         <p id ='playerScoreText'>0</p>
+       </div>
+       <div class ='scoreComputer'>
+         <h3>Computer Score</h3>
+         <p id = 'computerScoreText'>0</p>
+       </div>
+       <div class ='actions'>
+         <p>The computer won Rock beats scissors</p>
+       </div>
 
 
     </div>
