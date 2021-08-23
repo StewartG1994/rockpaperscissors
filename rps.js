@@ -1,3 +1,7 @@
+let playerSelection = null;
+
+
+
 function computerPlay() 
 {
     const computerSelection = ["rock", "paper", "scissors"];
@@ -24,16 +28,13 @@ function playRound(playerSelection, computerSelection){
 
 function game(){
 
-//let playerChoice = prompt('Rock, Paper or Scissors?')
-console.log(playRound(playerChoice, computerPlay()))
+let playerSelection = getElementsByClassName('button')
+console.log(playerSelection)
 
+
+//console.log(playRound(playerSelection, computerPlay()))
 
 
 }
 
 game()
-game()
-game()
-game()
-game()
-

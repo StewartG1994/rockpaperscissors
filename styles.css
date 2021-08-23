@@ -1,5 +1,4 @@
 
-
 body{
     font-family: 'Roboto', sans-serif;
 
@@ -71,3 +70,6 @@ body{
     grid-column-end: 4;
 }
 
+.buttonDiv{
+    padding-top: 15px;
+}
