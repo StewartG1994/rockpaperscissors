@@ -1,10 +1,9 @@
 let playerSelection = null;
 let buttons = document.querySelectorAll('button');
+let content = document.getElementById('content');
 
-let computerScore = 0 ;
-let playerScore   = 0 ;
-
-
+document.getElementById('computerScoreText').innerHTML = 0;
+document.getElementById('playerScoreText').innerHTML = 0;
 
 function computerPlay() 
 {
@@ -13,16 +12,7 @@ function computerPlay()
     return random;
 }
 
-
 function playRound(playerSelection, computerSelection){
-
-    console.log(computerScore,playerScore)
-    document.getElementById('computerScoreText').innerHTML = computerScore;
-document.getElementById('playerScoreText').innerHTML = playerScore;
-    let content = document.getElementById('content');
-
-
-
 
 
     if (playerSelection.toLowerCase() == computerSelection.toLowerCase())
@@ -34,30 +24,24 @@ document.getElementById('playerScoreText').innerHTML = playerScore;
     (playerSelection.toLowerCase() == "paper" && computerSelection == "rock"))
     {
 
-        playerScore++
-        return  (content.innerHTML = `You win against the computer ${playerSelection} beats ${computerSelection}`   ) }
+        document.getElementById('playerScoreText').innerHTML++
+        return  (content.innerHTML = `You win against the computer ${playerSelection} beats the computers choice - ${computerSelection}`   ) }
 
     else {
 
-        computerScore++
-        return (content.innerHTML = `You lost against a computer.. ${computerSelection} beats ${playerSelection} ` )}
-
+        document.getElementById('computerScoreText').innerHTML++ ;
+        return (content.innerHTML = `You lost - the computer drew ${computerSelection} which beats ${playerSelection} ` )}
 
 }
 
-
 function game(){
-    
-    console.log(computerPlay())
+
     buttons.forEach((button) => {
 
         button.addEventListener('click', () => {
         console.log(playRound(button.innerHTML, computerPlay()))
-        });
+       });
       });
-    
-
-
 }
 
 game()
