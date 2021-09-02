@@ -1,9 +1,13 @@
 let playerSelection = null;
 let buttons = document.querySelectorAll('button');
 let content = document.getElementById('content');
+let pScore = document.getElementById('playerScoreText').innerHTML;
+let sScore = document.getElementById('computerScoreText').innerHTML;
 
 document.getElementById('computerScoreText').innerHTML = 0;
 document.getElementById('playerScoreText').innerHTML = 0;
+
+
 
 function computerPlay() 
 {
@@ -13,7 +17,6 @@ function computerPlay()
 }
 
 function playRound(playerSelection, computerSelection){
-
 
     if (playerSelection.toLowerCase() == computerSelection.toLowerCase())
     {
@@ -31,18 +34,19 @@ function playRound(playerSelection, computerSelection){
 
         document.getElementById('computerScoreText').innerHTML++ ;
         return (content.innerHTML = `You lost - the computer drew ${computerSelection} which beats ${playerSelection} ` )}
+    
 
 }
 
 function game(){
-
+   
     buttons.forEach((button) => {
-
         button.addEventListener('click', () => {
         console.log(playRound(button.innerHTML, computerPlay()))
        });
       });
-}
+
+    }
 
 game()
 
