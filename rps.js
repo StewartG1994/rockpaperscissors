@@ -1,15 +1,5 @@
-let playerSelection = null;
-let buttons = document.querySelectorAll('button');
-let content = document.getElementById('content');
-let pScore = document.getElementById('playerScoreText').textContent;
-let sScore = document.getElementById('computerScoreText').textContent;
-
-document.getElementById('computerScoreText').innerHTML = 0;
-document.getElementById('playerScoreText').innerHTML = 0;
-
-let playerCounter = 0;
-let computerCounter = 0;
-
+const actions = document.querySelector('.actions')
+const buttons = document.querySelectorAll('button');
 
 function computerPlay() 
 {
@@ -22,7 +12,10 @@ function playRound(playerSelection, computerSelection){
 
     if (playerSelection.toLowerCase() == computerSelection.toLowerCase())
     {
-        return(content.innerHTML =`Its a draw ${playerSelection} matches ${computerSelection} `)}
+        const pOne = document.createElement('p')
+        pOne.textContent = `Its a draw ${playerSelection} matches ${computerSelection} `;
+        actions.appendChild(pOne)
+    }
 
     else if ((playerSelection.toLowerCase() == "rock"  && computerSelection =="scissors")  ||
     (playerSelection.toLowerCase() == "scissors" && computerSelection == "paper")    ||
@@ -30,14 +23,17 @@ function playRound(playerSelection, computerSelection){
     {
 
         document.getElementById('playerScoreText').innerHTML++
-        playerCounter++
-        return  (content.innerHTML = `You win against the computer ${playerSelection} beats the computers choice - ${computerSelection}`   ) }
+ 
+        const p = document.createElement('p');
+        p.textContent = `You win against the computer ${playerSelection} beats the computers choice - ${computerSelection}`;
+        actions.appendChild(p);}
 
     else {
 
         document.getElementById('computerScoreText').innerHTML++ ;
-        computerCounter++
-        return (content.innerHTML = `You lost - the computer drew ${computerSelection} which beats ${playerSelection} ` )}  
+        const ptwo = document.createElement('p');
+        ptwo.textContent = `You lost - the computer drew ${computerSelection} which beats ${playerSelection}`;
+        actions.appendChild(ptwo);}       
 }
 
 function game(){
@@ -50,4 +46,3 @@ function game(){
     }
 
 game()
-
