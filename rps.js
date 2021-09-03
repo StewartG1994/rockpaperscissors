@@ -1,12 +1,14 @@
 let playerSelection = null;
 let buttons = document.querySelectorAll('button');
 let content = document.getElementById('content');
-let pScore = document.getElementById('playerScoreText').innerHTML;
-let sScore = document.getElementById('computerScoreText').innerHTML;
+let pScore = document.getElementById('playerScoreText').textContent;
+let sScore = document.getElementById('computerScoreText').textContent;
 
 document.getElementById('computerScoreText').innerHTML = 0;
 document.getElementById('playerScoreText').innerHTML = 0;
 
+let playerCounter = 0;
+let computerCounter = 0;
 
 
 function computerPlay() 
@@ -28,24 +30,23 @@ function playRound(playerSelection, computerSelection){
     {
 
         document.getElementById('playerScoreText').innerHTML++
+        playerCounter++
         return  (content.innerHTML = `You win against the computer ${playerSelection} beats the computers choice - ${computerSelection}`   ) }
 
     else {
 
         document.getElementById('computerScoreText').innerHTML++ ;
-        return (content.innerHTML = `You lost - the computer drew ${computerSelection} which beats ${playerSelection} ` )}
-    
-
+        computerCounter++
+        return (content.innerHTML = `You lost - the computer drew ${computerSelection} which beats ${playerSelection} ` )}  
 }
 
 function game(){
    
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
-        console.log(playRound(button.innerHTML, computerPlay()))
+        playRound(button.innerHTML, computerPlay())
        });
       });
-
     }
 
 game()
